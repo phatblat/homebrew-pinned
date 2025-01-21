@@ -41,11 +41,11 @@ cask "parallels" do
                    args: ["-d", "com.apple.FinderInfo", "#{staged_path}/Parallels Desktop.app"]
   end
 
-  postflight do
-    system_command "#{appdir}/Parallels Desktop.app/Contents/MacOS/inittool",
-                   args: ["init"],
-                   sudo: true
-  end
+  # postflight do
+  #   system_command "#{appdir}/Parallels Desktop.app/Contents/MacOS/inittool",
+  #                  args: ["init"],
+  #                  sudo: true
+  # end
 
   uninstall_preflight do
     set_ownership "#{appdir}/Parallels Desktop.app"
